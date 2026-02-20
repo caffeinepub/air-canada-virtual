@@ -1,0 +1,79 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-redesign-the-main-page-hero-section-to-match-the-uploaded-reference-images-image-1-png-image-2-png-with-a-prominent-where-can-we-take-you-headline-centered-over-the-background-image",
+      "featureTitle": "Redesign the main page hero section to match the uploaded reference images (image-1.png, image-2.png) with a prominent 'Where can we take you?' headline centered over the background image",
+      "files": [
+        "frontend/src/components/Layout.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-flight-status-indicator-to-the-main-page-that-displays-the-current-operational-status-e-g-on-time-delayed-cancelled-prominently-in-the-hero-or-header-area",
+      "featureTitle": "Add a flight status indicator to the main page that displays the current operational status (e.g., 'On Time', 'Delayed', 'Cancelled') prominently in the hero or header area",
+      "files": [
+        "frontend/src/components/FlightStatusIndicator.tsx",
+        "frontend/src/components/Layout.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-flight-status-editing-controls-to-the-admin-dashboard-at-admin-ops-allowing-staff-to-select-and-update-the-operational-status-on-time-delayed-cancelled-etc",
+      "featureTitle": "Add flight status editing controls to the admin dashboard at /admin-ops allowing staff to select and update the operational status (On Time, Delayed, Cancelled, etc.)",
+      "files": [
+        "frontend/src/components/FlightStatusEditor.tsx",
+        "frontend/src/pages/AdminDashboard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-19"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-connect-the-main-page-flight-status-indicator-to-the-backend-getflightstatus-query-and-refresh-status-automatically-using-react-query",
+      "featureTitle": "Connect the main page flight status indicator to the backend getFlightStatus query and refresh status automatically using React Query",
+      "files": [
+        "frontend/src/components/FlightStatusIndicator.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-20"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

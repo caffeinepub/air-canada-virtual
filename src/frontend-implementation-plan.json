@@ -1,0 +1,86 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Redesign main page with hero section and editable flight status indicator",
+  "requirements": [
+    {
+      "id": "REQ-16",
+      "summary": "Redesign the main page hero section to match the uploaded reference images with a prominent 'Where can we take you?' headline centered over the background image",
+      "acceptanceCriteria": [
+        "Hero section displays 'Where can we take you?' as the main headline",
+        "Layout matches the visual structure shown in the uploaded reference images",
+        "Background image is visible behind the hero content",
+        "Text is clearly legible with appropriate contrast"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Redesign the hero section to prominently display 'Where can we take you?' as the main headline, centered over the background image. Update the layout structure to match the reference images (image-1.png, image-2.png) showing a full-width hero with the headline overlaying the background. Ensure text contrast and legibility using text shadows or semi-transparent overlays. Maintain the existing glassmorphism design system with Air Canada red accent colors."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Add a flight status indicator to the main page that displays the current operational status prominently in the hero or header area",
+      "acceptanceCriteria": [
+        "Status indicator is visible on the main page",
+        "Displays current operational status text (e.g., 'On Time', 'Delayed')",
+        "Status updates dynamically based on backend data",
+        "Visual design integrates with glassmorphism theme"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/FlightStatusIndicator.tsx",
+          "operation": "create",
+          "description": "Create a new FlightStatusIndicator component that displays the current operational status (e.g., 'On Time', 'Delayed', 'Cancelled') prominently. The component should fetch status from the backend getFlightStatus query and display it with appropriate visual styling that integrates with the glassmorphism theme. Include status-specific color coding (green for On Time, yellow for Delayed, red for Cancelled) and handle loading/error states gracefully."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Wire the FlightStatusIndicator component into the Layout, positioning it prominently in the hero or header area where it will be visible on the main page. Ensure the indicator is displayed above or integrated with the hero section content without obstructing the 'Where can we take you?' headline."
+        }
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "summary": "Add flight status editing controls to the admin dashboard allowing staff to select and update the operational status",
+      "acceptanceCriteria": [
+        "Status editor appears in the admin dashboard",
+        "Dropdown or radio buttons allow selecting status options",
+        "Save button triggers backend update",
+        "Success confirmation displays after update",
+        "Current status is pre-selected when page loads"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/FlightStatusEditor.tsx",
+          "operation": "create",
+          "description": "Create a FlightStatusEditor component for the admin dashboard that allows staff to update the operational status. Include a dropdown or radio button group with options like 'On Time', 'Delayed', 'Cancelled', 'Boarding', 'Departed'. Fetch the current status using getFlightStatus on load and pre-select it. Implement a Save button that calls the backend setFlightStatus mutation and displays a success confirmation message after successful update. Style consistently with the existing glassmorphism admin interface."
+        },
+        {
+          "path": "frontend/src/pages/AdminDashboard.tsx",
+          "operation": "modify",
+          "description": "Wire the FlightStatusEditor component into the AdminDashboard page, positioning it alongside the existing FlightManagementForm. Add a section header like 'Flight Status Management' to organize the dashboard content. Ensure the editor is visible and accessible to admin users after authentication."
+        }
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "summary": "Connect the main page flight status indicator to the backend getFlightStatus query and refresh status automatically using React Query",
+      "acceptanceCriteria": [
+        "Status indicator fetches data from backend on load",
+        "React Query refetchInterval keeps status current",
+        "Status updates reflect immediately after admin changes",
+        "Loading and error states are handled gracefully"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/FlightStatusIndicator.tsx",
+          "operation": "modify",
+          "description": "Implement React Query integration in the FlightStatusIndicator component to fetch status from the backend getFlightStatus query. Configure a refetchInterval (e.g., 30 seconds) to automatically refresh the status and ensure updates made by admin users are reflected promptly. Handle loading states with a skeleton or spinner, and display a fallback message for error states (e.g., 'Status unavailable'). Use the useActor hook to access the backend actor instance."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "kind": "build_request",
+  "title": "Redesign main page with hero section and editable flight status indicator",
+  "projectName": "Air Canada Virtual",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-16",
+      "text": "Redesign the main page hero section to match the uploaded reference images (image-1.png, image-2.png) with a prominent 'Where can we take you?' headline centered over the background image",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "make the main page look like that but with the text you need to have"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero section displays 'Where can we take you?' as the main headline",
+        "Layout matches the visual structure shown in the uploaded reference images",
+        "Background image is visible behind the hero content",
+        "Text is clearly legible with appropriate contrast"
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Add a flight status indicator to the main page that displays the current operational status (e.g., 'On Time', 'Delayed', 'Cancelled') prominently in the hero or header area",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "make it where its saying on time or what ever"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Status indicator is visible on the main page",
+        "Displays current operational status text (e.g., 'On Time', 'Delayed')",
+        "Status updates dynamically based on backend data",
+        "Visual design integrates with glassmorphism theme"
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "text": "Add a FlightStatus type to the backend with fields for status text and timestamp, and implement functions to set and retrieve the current flight status",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "staff can edit in admin if its on time or no"
+        ]
+      },
+      "acceptanceCriteria": [
+        "FlightStatus type defined in backend/main.mo",
+        "setFlightStatus function allows updating the status",
+        "getFlightStatus function returns the current status",
+        "Status persists across canister upgrades"
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "text": "Add flight status editing controls to the admin dashboard at /admin-ops allowing staff to select and update the operational status (On Time, Delayed, Cancelled, etc.)",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "staff can edit in admin if its on time or no"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Status editor appears in the admin dashboard",
+        "Dropdown or radio buttons allow selecting status options",
+        "Save button triggers backend update",
+        "Success confirmation displays after update",
+        "Current status is pre-selected when page loads"
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "text": "Connect the main page flight status indicator to the backend getFlightStatus query and refresh status automatically using React Query",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Status indicator fetches data from backend on load",
+        "React Query refetchInterval keeps status current",
+        "Status updates reflect immediately after admin changes",
+        "Loading and error states are handled gracefully"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify frontend/src/hooks/useInternetIdentity.ts or frontend/src/hooks/useActor.ts",
+    "Maintain the existing glassmorphism design system with Air Canada red accent colors",
+    "Preserve the existing admin password authentication flow"
+  ],
+  "nonGoals": [
+    "Changing the existing departures page or booking flow",
+    "Modifying career application forms",
+    "Adding real-time WebSocket updates for status changes"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

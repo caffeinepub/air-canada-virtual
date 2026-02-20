@@ -1,0 +1,18 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router configuration for all routes including departures, careers, application form, admin login, and admin dashboard, wrapped in a shared Layout component.",
+  "frontend/src/main.tsx": "Application entry point with QueryClient, InternetIdentityProvider, and Sonner toast notifications configured.",
+  "frontend/src/components/Layout.tsx": "Shared layout component with redesigned hero section prominently displaying \"Where can we take you?\" headline centered over full-width background image, flight status indicator in header navigation, and glassmorphism styling throughout.",
+  "frontend/src/components/FlightStatusTicker.tsx": "Animated ticker component displaying rotating flight status updates with aviation terminology including gate assignments, pushback times, and load factors.",
+  "frontend/src/components/BookingModal.tsx": "Interactive flight reservation modal with form fields for passenger name, Discord username, and Roblox username that saves reservation data to backend and displays a digital boarding pass confirmation with glassmorphism styling.",
+  "frontend/src/components/FlightManagementForm.tsx": "Admin form component for adding new flights with input fields for flight number, origin, destination, aircraft type, and departure/arrival times, connected to backend addFlight mutation.",
+  "frontend/src/pages/Departures.tsx": "Main departures page displaying dynamic list of flights from backend with glassmorphism cards showing all flight details and book buttons that trigger the booking modal.",
+  "frontend/src/pages/Careers.tsx": "Careers page with responsive grid layout displaying three role categories (Flight Deck with external Google Form redirect, Cabin Crew, ATC) with images and apply buttons.",
+  "frontend/src/pages/ApplicationForm.tsx": "Comprehensive application form with role-specific fields for Cabin Crew (availability, languages, previous roles, training, customer service skills) and ATC (preferred position, availability, ATC procedures understanding, previous roles) that saves application data to backend.",
+  "frontend/src/pages/AdminLogin.tsx": "Password-protected admin login page with case-sensitive authentication calling backend authenticate method, displaying red error message for invalid credentials.",
+  "frontend/src/pages/AdminDashboard.tsx": "Admin dashboard page with two-column grid layout displaying flight status editor and flight management form side-by-side, with logout functionality and glassmorphism styling.",
+  "frontend/src/index.css": "Global styles with OKLCH color system featuring Air Canada red accent color, glassmorphism utility classes for dark and light variants with backdrop blur effects.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with Air Canada red brand color, glassmorphism shadows, Inter font family, and custom design tokens matching the aviation theme.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for managing flight status data including useGetFlightStatus query with 30-second auto-refresh and useSetFlightStatus mutation with cache invalidation.",
+  "frontend/src/components/FlightStatusIndicator.tsx": "Compact status indicator component displaying current operational status with color-coded icons (green for On Time, yellow for Delayed, red for Cancelled) and graceful loading/error states.",
+  "frontend/src/components/FlightStatusEditor.tsx": "Admin component with dropdown selector for operational status options (On Time, Delayed, Cancelled, Boarding, Departed, Maintenance, Weather Hold) and save button that updates backend and displays toast confirmation."
+}

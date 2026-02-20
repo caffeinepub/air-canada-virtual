@@ -1,0 +1,253 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "Air Canada Virtual airline simulation web app with glassmorphism design, featuring flight departures/booking with saved reservation data (Discord and Roblox usernames), careers page with external Google Form integration for Flight Deck applications, extended career application forms, and password-protected admin dashboard for flight management",
+  "architectural_notes": [
+    "Glassmorphism design with dark headers and white/light-blue content areas",
+    "Red Air Canada rondelle as primary accent color",
+    "Case-sensitive password authentication: Flighttime415!!",
+    "Admin panel reveals flight management form upon successful authentication",
+    "JavaScript-based password verification with red error messages",
+    "Hidden admin route accessible via footer button or /admin-ops",
+    "Roblox-style imagery integration for virtual airline community feel",
+    "Flight reservations persist Discord and Roblox usernames to localStorage/backend",
+    "Flight Deck career applications redirect to external Google Form instead of internal form",
+    "Staff applications (Cabin Crew, ATC) save data locally or to backend storage"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-glassmorphism-design-system-with-dark-themed-headers-white-light-blue-content-areas-and-red-air-canada-rondelle-as-primary-accent-color-throughout-the-application",
+      "title": "Implement glassmorphism design system with dark themed headers, white/light-blue content areas, and red Air Canada rondelle as primary accent color throughout the application",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-departures-page-with-dynamic-flight-list-displaying-flight-number-e-g-ac851-origin-destination-aircraft-type-e-g-boeing-787-8-departure-time-arrival-time-and-a-book-button-for-each-flight",
+      "title": "Create Departures page with dynamic flight list displaying Flight Number (e.g., AC851), Origin, Destination, Aircraft Type (e.g., Boeing 787-8), Departure Time, Arrival Time, and a Book button for each flight",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-booking-modal-that-appears-when-book-button-is-clicked-displaying-a-digital-boarding-pass-with-the-selected-flight-s-details-flight-number-origin-destination-aircraft-type-departure-arrival-times",
+      "title": "Implement booking modal that appears when Book button is clicked, displaying a digital boarding pass with the selected flight's details (Flight Number, Origin, Destination, Aircraft Type, Departure/Arrival times)",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-careers-page-with-grid-style-layout-displaying-roles-for-flight-deck-cabin-crew-and-atc-each-with-buttons-linking-to-a-simulated-application-form",
+      "title": "Create Careers page with grid-style layout displaying roles for Flight Deck, Cabin Crew, and ATC, each with buttons linking to a simulated application form",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-hidden-admin-route-at-admin-ops-with-password-protected-access-using-hardcoded-password-flighttime415-case-sensitive-displaying-invalid-credentials-security-notified-error-message-in-red-when-wrong-password-is-entered",
+      "title": "Create hidden admin route at /admin-ops with password-protected access using hardcoded password 'Flighttime415!!' (case-sensitive), displaying 'Invalid Credentials. Security notified.' error message in red when wrong password is entered",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-flight-management-dashboard-in-admin-area-with-input-fields-for-origin-city-destination-city-departure-time-arrival-time-aircraft-model-and-a-publish-flight-button-that-adds-the-new-flight-to-the-live-departures-list",
+      "title": "Implement Flight Management Dashboard in admin area with input fields for Origin City, Destination City, Departure Time, Arrival Time, Aircraft Model, and a Publish Flight button that adds the new flight to the live Departures list",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-live-flight-status-ticker-component-using-aviation-terminology-including-gate-assignment-pushback-time-and-load-factor",
+      "title": "Add Live Flight Status ticker component using aviation terminology including Gate Assignment, Pushback Time, and Load Factor",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-hidden-staff-login-button-in-the-footer-that-navigates-to-admin-ops-route",
+      "title": "Add hidden Staff Login button in the footer that navigates to /admin-ops route",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-air-canada-rondelle-logo-with-the-red-maple-leaf-logo-from-the-uploaded-image-download-png-throughout-the-application",
+      "title": "Replace the Air Canada rondelle logo with the red maple leaf logo from the uploaded image (download.png) throughout the application",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-discord-username-and-roblox-username-fields-to-the-flight-reservation-form-in-the-booking-modal",
+      "title": "Add Discord username and Roblox username fields to the flight reservation form in the booking modal",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-persist-flight-reservation-data-including-passenger-name-discord-username-roblox-username-and-flight-details-to-the-backend-when-a-booking-is-completed",
+      "title": "Persist flight reservation data including passenger name, Discord username, Roblox username, and flight details to the backend when a booking is completed",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-redirect-flight-deck-applications-to-the-external-google-form-at-https-docs-google-com-forms-d-e-1faipqlsdhbu3uqxkbs4du8dks17rvnxw-gs7byy3deho6nr-xgmpmiw-viewform-instead-of-showing-the-internal-application-form",
+      "title": "Redirect Flight Deck applications to the external Google Form at https://docs.google.com/forms/d/e/1FAIpQLSdHbu3uQxKbs4du8DKS17rvnxW_GS7byy3deho6Nr_XgMPMiw/viewform instead of showing the internal application form",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-expand-the-career-application-form-for-cabin-crew-and-atc-roles-with-additional-detailed-questions-beyond-name-email-experience-and-motivation",
+      "title": "Expand the career application form for Cabin Crew and ATC roles with additional detailed questions beyond name, email, experience, and motivation",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-persist-staff-application-data-for-cabin-crew-and-atc-roles-to-the-backend-when-an-application-is-submitted",
+      "title": "Persist staff application data for Cabin Crew and ATC roles to the backend when an application is submitted",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-uploaded-aircraft-airport-scene-image-image-png-as-a-visual-asset-in-the-application",
+      "title": "Add the uploaded aircraft/airport scene image (image.png) as a visual asset in the application",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-redesign-the-main-page-hero-section-to-match-the-uploaded-reference-images-image-1-png-image-2-png-with-a-prominent-where-can-we-take-you-headline-centered-over-the-background-image",
+      "title": "Redesign the main page hero section to match the uploaded reference images (image-1.png, image-2.png) with a prominent 'Where can we take you?' headline centered over the background image",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-flight-status-indicator-to-the-main-page-that-displays-the-current-operational-status-e-g-on-time-delayed-cancelled-prominently-in-the-hero-or-header-area",
+      "title": "Add a flight status indicator to the main page that displays the current operational status (e.g., 'On Time', 'Delayed', 'Cancelled') prominently in the hero or header area",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-flight-status-editing-controls-to-the-admin-dashboard-at-admin-ops-allowing-staff-to-select-and-update-the-operational-status-on-time-delayed-cancelled-etc",
+      "title": "Add flight status editing controls to the admin dashboard at /admin-ops allowing staff to select and update the operational status (On Time, Delayed, Cancelled, etc.)",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-connect-the-main-page-flight-status-indicator-to-the-backend-getflightstatus-query-and-refresh-status-automatically-using-react-query",
+      "title": "Connect the main page flight status indicator to the backend getFlightStatus query and refresh status automatically using React Query",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Departures page with dynamic flight list showing flight details and booking capability",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Booking modal with digital boarding pass display",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Careers page with grid layout for Flight Deck, Cabin Crew, and ATC roles",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Password-protected admin dashboard at /admin-ops with flight management",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Live flight status ticker with aviation terminology",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Save flight reservation data including Discord username and Roblox username",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Redirect Flight Deck applications to external Google Form (https://docs.google.com/forms/d/e/1FAIpQLSdHbu3uQxKbs4du8DKS17rvnxW_GS7byy3deho6Nr_XgMPMiw/viewform)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Save staff application data for Cabin Crew and ATC roles",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Extend career application forms with more detailed questions",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Add Discord username and Roblox username fields to flight reservation form",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Display flight status (on time/delayed) on main page with admin edit capability",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Add a FlightStatus type to the backend with fields for status text and timestamp, and implement functions to set and retrieve the current flight status",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Air Canada Virtual",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
